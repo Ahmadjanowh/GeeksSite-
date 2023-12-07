@@ -1,0 +1,998 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,700&family=Quicksand:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,400;0,600;1,100&family=Roboto:ital,wght@0,700;0,900;1,400;1,500&display=swap');
+
+
+
+
+:root {
+    --toastify-color-light: #fff;
+    --toastify-color-dark: #121212;
+    --toastify-color-info: #3498db;
+    --toastify-color-success: #07bc0c;
+    --toastify-color-warning: #f1c40f;
+    --toastify-color-error: #e74c3c;
+    --toastify-color-transparent: hsla(0, 0%, 100%, .7);
+    --toastify-icon-color-info: var(--toastify-color-info);
+    --toastify-icon-color-success: var(--toastify-color-success);
+    --toastify-icon-color-warning: var(--toastify-color-warning);
+    --toastify-icon-color-error: var(--toastify-color-error);
+    --toastify-toast-width: 320px;
+    --toastify-toast-background: #fff;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-font-family: sans-serif;
+    --toastify-z-index: 9999;
+    --toastify-text-color-light: #757575;
+    --toastify-text-color-dark: #fff;
+    --toastify-text-color-info: #fff;
+    --toastify-text-color-success: #fff;
+    --toastify-text-color-warning: #fff;
+    --toastify-text-color-error: #fff;
+    --toastify-spinner-color: #616161;
+    --toastify-spinner-color-empty-area: #e0e0e0;
+    --toastify-color-progress-light: linear-gradient(90deg, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+    --toastify-color-progress-dark: #bb86fc;
+    --toastify-color-progress-info: var(--toastify-color-info);
+    --toastify-color-progress-success: var(--toastify-color-success);
+    --toastify-color-progress-warning: var(--toastify-color-warning);
+    --toastify-color-progress-error: var(--toastify-color-error);
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+    --geeks: #f1c40f;
+    --body: #2c2e35
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Roboto);
+}
+
+img {
+    width: 100px;
+    display: block;
+}
+
+body {
+    background-color: #2c2e35;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* header  styling start  */
+header {
+    height: 100vh;
+    background: #2c2e35;
+}
+
+.navbar {
+    background-color: #2c2e35;
+    padding: 1.2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    /* Увеличьте значение z-index */
+}
+
+
+.navigation {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation .logo img {
+    width: auto;
+    height: auto;
+}
+
+.navbar-nav {
+    padding: 0.8rem 0 0.2rem 0;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    font-family: var(--Quicksand);
+    transition: opacity 0.5 ease;
+    padding: 15px;
+
+
+}
+
+.navbar-nav a:hover {
+    opacity: 0.7;
+}
+
+.navigation .navbar-btn button {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    background-color: #f1c40f;
+    color: white;
+    border-radius: 15px;
+    border-color: var(--geeks);
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    font-size: 20px !important;
+    font-weight: 500;
+    line-height: 22px !important;
+    padding: 12px 24px !important;
+    text-align: left;
+    cursor: pointer;
+    transition: opacity 0.5 ease;
+
+
+}
+
+.navigation .navbar-btn button:hover {
+    /* Настройка вашего баннера */
+    opacity: 0.7;
+
+}
+
+/* Banner */
+.banner-container {
+    width: 100%;
+    height: auto;
+    margin-top: 10%;
+}
+
+.banner-parent {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.title {
+    width: 100%;
+    margin-top: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.title h1 {
+    font-size: 55px;
+    color: #beff43;
+
+}
+
+.title p {
+    max-width: 80%;
+    font-size: 28px;
+    color: white;
+}
+
+.title button {
+    margin-top: 5%;
+    width: 60%;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.7 ease;
+}
+
+.title button:hover {
+    opacity: 0.7;
+}
+
+.image {
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+/* HEaer end */
+.pr-container {
+    width: 100%;
+    height: auto;
+    margin-top: 10%;
+}
+
+.pr-parent {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.pr {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pr h1 {
+    font-size: 60px;
+    color: #beff43;
+}
+
+.pr p {
+    font-size: 20px;
+    color: rgb(173, 171, 171);
+}
+
+/* ПОЧУМУ СТОИТЬ УЧИТЬСЯ В GEEKS JUNIOR */
+.box {
+    background-color: white;
+    width: 80%;
+    margin: 10%;
+
+}
+
+
+.title-box h1 {
+    font-size: 30PX;
+    padding: 5%;
+    height: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    text-transform: uppercase;
+}
+
+
+
+.box-button button:hover {
+    opacity: 0.5;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 15px;
+
+}
+
+.child h1 {
+    padding: 10px;
+    margin: 5px;
+    color: rgb(39, 38, 38, );
+}
+
+.child p {
+    margin-left: 15px;
+    color: rgba(39, 38, 38, 0.9);
+
+
+}
+
+/* Geeks в цифрах */
+.geeksint-content {
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 10px;
+
+
+}
+
+.gi-cont {
+    background-color: white;
+    padding-right: 15px;
+    padding: 20px;
+}
+
+.gi-cont h1 {
+    color: var(--dark);
+    font-family: var(--root-font-grotesk) !important;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 35px;
+    text-align: right;
+    text-transform: uppercase;
+
+}
+
+.gi-cont p {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.gint-text {
+    color: var(--geeks);
+    font-family: var(--root-font-grotesk) !important;
+    font-size: 10px !important;
+    font-weight: 300 !important;
+    line-height: 77px !important;
+    text-transform: uppercase;
+    margin-left: 10%;
+    margin-bottom: 40px;
+
+}
+
+/* Geeks Online*/
+.onln-parent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 10%;
+}
+
+.chld1 {
+    margin-top: 10%;
+}
+
+.chld1 h1 {
+    margin-left: 10%;
+    color: var(--geeks);
+    text-align: left;
+}
+
+.chld1 p {
+    color: rgba(254, 247, 247, 0.5);
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.go-btn {
+    margin-left: 10%;
+    margin-top: 3%;
+    width: 200px;
+    height: 30px;
+}
+
+.chld1 button {
+    margin-left: 10%;
+    margin-top: 3%;
+    border-radius: 15px;
+    padding: 1 0px;
+    border: none;
+    border-color: var(--geeks);
+    background-color: var(--geeks);
+    cursor: pointer;
+    transition: background-color 2 ease;
+}
+
+.chld1 button:hover {
+    background-color: white;
+}
+
+.onln-img img {
+    width: 70%;
+    height: auto;
+    margin-left: 10%;
+}
+
+/* Courses */
+.crs-container {
+    width: 100%;
+    height: auto;
+}
+
+.crs-parent {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.crs {
+    background-color: white;
+}
+
+.crs-items {
+    display: grid;
+    grid-template-columns: 100%;
+
+}
+
+.icon {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 6%;
+    padding: 10px;
+}
+
+.start {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: uppercase;
+    background-color: var(--geeks);
+    width: 45%;
+    border-radius: 20px;
+    margin-top: 6%;
+    padding: 10px;
+    color: #2c2e35;
+}
+
+.title-cr {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: uppercase;
+    margin-top: 4%;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.des {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #47474b;
+}
+
+.moth {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: uppercase;
+    padding: 5px;
+    color: #47474b;
+
+}
+
+.more {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: uppercase;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    padding: 10px;
+    color: #47474b;
+}
+
+.more p {
+    color: #2b2b2b;
+    transition: opacity 0.7 ease;
+}
+
+.more p:hover {
+    opacity: 0.7;
+}
+
+/* Бесплатный урок */
+.pru-containre {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+}
+
+.pru-parent {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.pru {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pru h1 {
+    color: #beff43;
+    font-size: 40px;
+}
+
+.pru p {
+    margin: 10px;
+    color: rgb(227, 225, 225);
+}
+
+.pru button {
+    margin: 20px;
+    padding: 15px;
+    transition: opacity 0.6 ease;
+}
+
+.pru button:hover {
+    opacity: 0.6;
+}
+
+.pru img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footeher */
+footer {}
+
+.ft-container {
+    width: 100%;
+    height: auto;
+}
+
+.ft-container img {
+    width: 20%;
+    margin-top: 10%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 40px;
+}
+
+
+
+
+.scl-contatiner {
+    width: 100%;
+    height: 100px;
+}
+
+.scl-parent {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10%;
+    margin-left: 40%;
+    margin-right: 20%;
+}
+
+.socl-icon img {
+    max-width: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.ft-end {
+    width: 100%;
+    height: 50px;
+    background-color: var(--geeks);
+}
+
+/* CSS код в файле main.css */
+
+/* Общие стили */
+/* ... */
+
+/* Добавьте эти стили в конец вашего CSS файла или в отдельный файл для медиа-запросов */
+
+/* Медиа-запрос для маленьких устройств (мобильные телефоны, портретные планшеты и др.) */
+/* Медиа-запрос для маленьких устройств (мобильные телефоны, портретные планшеты и др.) */
+@media only screen and (max-width: 767px) {
+    /* ... (ваш существующий код для мобильных устройств) */
+
+    /* Отображение меню при клике на иконку */
+    .navigation .navbar-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #3c393d;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .navigation .navbar-nav.active {
+        display: block;
+    }
+
+    .navigation .navbar-nav a {
+        display: block;
+        padding: 1rem;
+        transition: opacity 0.5s ease;
+    }
+
+    .navigation .navbar-nav a:hover {
+        opacity: 0.7;
+    }
+
+    .navigation .navbar-btn {
+        display: block;
+        text-align: center;
+    }
+
+
+    .pr-container {
+        width: 100%;
+        height: auto;
+        margin-top: 2%;
+    }
+
+    .pr-parent {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .pr {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .pr h1 {
+        font-size: 60px;
+        color: #beff43;
+    }
+
+    .pr p {
+        font-size: 20px;
+        color: rgb(173, 171, 171);
+    }
+
+    /* ПОЧУМУ СТОИТЬ УЧИТЬСЯ В GEEKS JUNIOR */
+    .box {
+        background-color: white;
+        width: 80%;
+        margin: 10%;
+
+    }
+
+
+    .title-box h1 {
+        font-size: 30PX;
+        padding: 5%;
+        height: auto;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: black;
+        text-transform: uppercase;
+    }
+
+
+
+    .box-button button:hover {
+        opacity: 0.5;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 15px;
+
+    }
+
+    .child h1 {
+        padding: 10px;
+        margin: 5px;
+        color: rgb(39, 38, 38, );
+    }
+
+    .child p {
+        margin-left: 15px;
+        color: rgba(39, 38, 38, 0.9);
+
+
+    }
+
+    /* Geeks в цифрах */
+    .geeksint-content {
+        display: grid;
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: 33% 33% 33%;
+        grid-gap: 10px;
+
+
+    }
+
+    .gi-cont {
+        background-color: white;
+        padding-right: 15px;
+        padding: 20px;
+    }
+
+    .gi-cont h1 {
+        color: var(--dark);
+        font-family: var(--root-font-grotesk) !important;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 35px;
+        text-align: right;
+        text-transform: uppercase;
+
+    }
+
+    .gi-cont p {
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .gint-text {
+        color: var(--geeks);
+        font-family: var(--root-font-grotesk) !important;
+        font-size: 10px !important;
+        font-weight: 300 !important;
+        line-height: 77px !important;
+        text-transform: uppercase;
+        margin-left: 10%;
+        margin-bottom: 40px;
+
+    }
+
+    /* Geeks Online*/
+    .onln-parent {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 10%;
+    }
+
+    .chld1 {
+        margin-top: 10%;
+    }
+
+    .chld1 h1 {
+        margin-left: 10%;
+        color: var(--geeks);
+        text-align: left;
+    }
+
+    .chld1 p {
+        color: rgba(254, 247, 247, 0.5);
+        margin-top: 3%;
+        margin-left: 10%;
+    }
+
+    .go-btn {
+        margin-left: 10%;
+        margin-top: 3%;
+        width: 200px;
+        height: 30px;
+    }
+
+    .chld1 button {
+        margin-left: 10%;
+        margin-top: 3%;
+        border-radius: 15px;
+        padding: 1 0px;
+        border: none;
+        border-color: var(--geeks);
+        background-color: var(--geeks);
+        cursor: pointer;
+        transition: background-color 2 ease;
+    }
+
+    .chld1 button:hover {
+        background-color: white;
+    }
+
+    .onln-img img {
+        width: 70%;
+        height: auto;
+        margin-left: 10%;
+    }
+
+    /* Courses */
+    .crs-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .crs-parent {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 10px;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .crs {
+        background-color: white;
+    }
+
+    .crs-items {
+        display: grid;
+        grid-template-columns: 100%;
+
+    }
+
+    .icon {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 6%;
+        padding: 10px;
+    }
+
+    .start {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-transform: uppercase;
+        background-color: var(--geeks);
+        width: 45%;
+        border-radius: 20px;
+        margin-top: 6%;
+        padding: 10px;
+        color: #2c2e35;
+    }
+
+    .title-cr {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-transform: uppercase;
+        margin-top: 4%;
+        padding: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .des {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-transform: uppercase;
+        padding: 10px;
+        color: #47474b;
+    }
+
+    .moth {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-transform: uppercase;
+        padding: 5px;
+        color: #47474b;
+
+    }
+
+    .more {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-transform: uppercase;
+        margin-bottom: 10%;
+        margin-top: 5%;
+        padding: 10px;
+        color: #47474b;
+    }
+
+    .more p {
+        color: #2b2b2b;
+        transition: opacity 0.7 ease;
+    }
+
+    .more p:hover {
+        opacity: 0.7;
+    }
+
+    /* Бесплатный урок */
+    .pru-containre {
+        width: 100%;
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .pru-parent {
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+
+    .pru {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .pru h1 {
+        color: #beff43;
+        font-size: 20px;
+    }
+
+    .pru p {
+        margin: 10px;
+        font-size: 15px;
+        color: rgb(227, 225, 225);
+    }
+
+    .pru button {
+        margin: 20px;
+        padding: 15px;
+        transition: opacity 0.6 ease;
+        font-size: 10px;
+    }
+
+    .pru button:hover {
+        opacity: 0.6;
+    }
+
+    .pru img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* Banner */
+    .banner-container {
+        width: 100%;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .banner-parent {
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+
+    .title {
+        width: 100%;
+        font-size: 20px;
+        margin-top: 30%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .title h1 {
+        font-size: 55px;
+        color: #beff43;
+
+    }
+
+    .title p {
+        max-width: 80%;
+        font-size: 15px;
+        color: white;
+    }
+
+    .title button {
+        margin-top: 5%;
+        width: 60%;
+        padding: 10px;
+        font-size: 10px;
+        cursor: pointer;
+        transition: opacity 0.7 ease;
+    }
+
+    .title button:hover {
+        opacity: 0.7;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ft-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .ft-container img {
+        width: 40%;
+        margin-top: 10%;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 30px;
+    }
+
+
+
+
+    .scl-contatiner {
+        width: 100%;
+        height: 100px;
+    }
+
+    .scl-parent {
+        display: grid;
+        grid-template-columns: 10% 10% 10% 10% 10% 10%;
+        margin-left: 40%;
+        margin-right: 20%;
+    }
+
+    .socl-icon img {
+        max-width: 80%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .ft-end {
+        width: 100%;
+        height: 50px;
+        background-color: var(--geeks);
+    }
+}

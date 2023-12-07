@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма записи на курсы</title>
+    <link rel="stylesheet" href="css/postcurse.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="parent">
+            <div class="child">
+                <h3>Зполнити форму и наша менеджера свяжутся с вами</h3>
+                <form action="/submit_course_form" method="post">
+                    <p>Имя</p>
+                    <input type="text" id="name" name="name" required placeholder="Имя"><br><br>
+
+                    <p>Номер телефона:</p>
+                    <input type="tel" id="phone" name="phone" required placeholder="Телефонный номер"><br><br>
+
+                    <p>Почта:</p>
+                    <input type="email" id="email" name="email" required placeholder="Почта"><br><br>
+
+                    <p>Выбери курс</p>
+                    <select id="course" name="course">
+                        <option value="course1">Проектный менеджер</option>
+                        <option value="course2">Frontend</option>
+                        <option value="course3">Backend</option>
+                        <option value="course4">Fullstack</option>
+                        <option value="course5">Android</option>
+                        <option value="course6">IOS</option>
+                        <option value="course7">UX/UI</option>
+                        <option value="course8">Основы програмирование</option>
+                        <option value="course9">Детское програмирование</option>
+                        <option value="course10">тестировшик ПО</option>
+                   </select>     <!-- Добавьте другие курсы по аналогии -->
+                    select><br><br>
+
+                    <input class="submit" type="submit" value="Записаться">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
