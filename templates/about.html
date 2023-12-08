@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курсы программирования с нуля | Программирование для начинающих - школа GEEKS</title>
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 </head>
 
 <body>
@@ -13,20 +14,10 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="navigation">
-                    <div class="logo">
-                        <a href="index.html"><img src="images/logo.svg" alt="Geeks logo"></a>
-                    </div>
-                    <div class="navbar-nav">
-                        <a href="courses.html" class="navbar-a">курсы</a>
-                        <a href="geeksjunior.html" class="navbar-a">geeks junior</a>
-                        <a href="geekspro.html" class="navbar-a">geeks pro</a>
-                        <a href="about.html" class="navbar-a">о нас</a>
-                        <a href="https://www.geekstudio.kg/" class="navbar-a" target="_blank">GEEKSTUDIO</a>
-                    </div>
+                {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
                         <a href="postcourse.html" target="_blank">
-                        <button>записаться</button>
+                        
                         </a>
                     </div>
                 </div>
@@ -40,11 +31,11 @@
 
                 </div>
                 <div class="title">
-                    <h1>НАША МИССИЯ</h1>
-                    <p>МЫ СОЗДАЕМ ЭКОСИСТЕМУ ДЛЯ ОБУЧЕНИЯ, РАБОТЫ И ТВОРЧЕСТВА IT-СПЕЦИАЛИСТОВ</p>
+                    <h1>{{settings.title}}</h1>
+                    <p>{{settings.descriptions}}</p>
                 </div>
                 <div class="image">
-                    <img src="images/advan/baner.png" alt="geeks junior">
+                    <img src="{{settings.image.url}}" alt="geeks junior">
                 </div>
             </div>
         </div>
@@ -54,27 +45,18 @@
     <!-- ИСТОРИЯ СОЗДАНИЯ -->
     <h1 class="history-cr">ИСТОРИЯ СОЗДАНИЯ</h1>
     <div class="hs-container">
+        {% for obj in history%}
+       
             <div class="hs-left">
                 <div class="hs-des">
-                    <p>Образовательный центр Geeks (Гикс) был основан Fullstack-разработчиком Айдаром Бакировым и Android-разработчиком Нургазы
-                    Сулаймановым в 2018-ом году в Бишкеке с целью дать возможность каждому человеку, даже без опыта в технологиях,
-                    гарантированно освоить IT-профессию.</p>
+                    <p>{{obj.text}}</p>
                 </div>
                 <div class="hs-image">
-                    <img src="images/about/left.webp" alt="">
+                    <img src="{{obj.iamge.url}}" alt="">
                 </div>
             </div>
-            <div class="hs-right">
-                <div class="hs-image">
-                    <img src="images/about/left.webp" alt="">
-                </div>
-                <div class="hs-des">
-                    <p>Образовательный центр Geeks (Гикс) был основан Fullstack-разработчиком Айдаром Бакировым и
-                        Android-разработчиком Нургазы
-                        Сулаймановым в 2018-ом году в Бишкеке с целью дать возможность каждому человеку, даже без опыта в
-                        технологиях,
-                        гарантированно освоить IT-профессию.</p>
-                </div>
+            
+            {% endfor %}
         </div>
     </div>
 
@@ -82,35 +64,13 @@
     <h1 class="sennost">НАШИ ЦЕННОСТИ</h1>
     <div class="sen-container">
         <div class="sen-parent">
+            {% for values in ourvalues %}
             <div class="sens">
-                <img src="images/about/lampa.png" alt="">
-                <h2>новаторства</h2>
-                <p>В мире постоянных и быстрых изменений мы держим руку на пульсе и стремимся знать о новых технологиях, трендах, методах
-                обучения в сфере IT. Поэтому, мы наблюдаем за рынком и ищем свой “Голубой океан”.
-                Мы гибкие, мобильные и мы очень любим обучаться и обучать новому.
-                Мы смелые в применении новых, неизведанных подходов в работе.
-                Мы инициативны в постоянном предложении маленьких ежедневных изменений.</p>
+                <img src="values.image.url" alt="">
+                <h2>{{values.title}}</h2>
+                <p>{{values.descriptions}}</p>
             </div>
-            <div class="sens">
-                <img src="images/about/lampa.png" alt="">
-                <h2>новаторства</h2>
-                <p>В мире постоянных и быстрых изменений мы держим руку на пульсе и стремимся знать о новых технологиях, трендах,
-                    методах
-                    обучения в сфере IT. Поэтому, мы наблюдаем за рынком и ищем свой “Голубой океан”.
-                    Мы гибкие, мобильные и мы очень любим обучаться и обучать новому.
-                    Мы смелые в применении новых, неизведанных подходов в работе.
-                    Мы инициативны в постоянном предложении маленьких ежедневных изменений.</p>
-            </div>
-            <div class="sens">
-                <img src="images/about/lampa.png" alt="">
-                <h2>новаторства</h2>
-                <p>В мире постоянных и быстрых изменений мы держим руку на пульсе и стремимся знать о новых технологиях, трендах,
-                    методах
-                    обучения в сфере IT. Поэтому, мы наблюдаем за рынком и ищем свой “Голубой океан”.
-                    Мы гибкие, мобильные и мы очень любим обучаться и обучать новому.
-                    Мы смелые в применении новых, неизведанных подходов в работе.
-                    Мы инициативны в постоянном предложении маленьких ежедневных изменений.</p>
-            </div>
+           {% endfor %}
         </div>
     </div>
 
@@ -118,104 +78,13 @@
     <h1 class="prnsp">ПРИНЦИПЫ РАБОТЫ</h1>
     <div class="prsnr-container">
         <div class="prsnr-parent">
+            {% for prsn in princiles %}
             <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на уровне
-                11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь помогаем
-                подняться до 11 класса и заинтересованы в развитии коллеги.</p>
+                <img src="{{prsn.image.url}}" alt="">
+                <h2>{{prsn.title}}</h2>
+                <p>{{prsn.descriptions}}</p>
             </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
-            <div class="prsnr-con">
-                <img src="images/about/senim.png" alt="">
-            
-                <h2>Ценим труд</h2>
-                <p>За каждым результатом стоит его исполнитель со своим жизненным опытом. Даже если наши требования к результатам на
-                    уровне
-                    11 го класса, а исполнитель может выдать на уровне 6 го, мы ценим его опыт, старания и труд! В свою очередь
-                    помогаем
-                    подняться до 11 класса и заинтересованы в развитии коллеги.</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -228,107 +97,17 @@
                 МИНУТУ!</p>
         </div>
         <div class="team-parent">
+            {% for t in team %}
             <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
+                <img src="{{t.iamge.url}}" alt="">
+                <h2>{{t.name}}</h2>
+                <p>{{t.job}}</p>
             </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
-            <div class="team">
-                <img src="images/about/nergazi.webp" alt="">
-                <h2>Нургазы Сулайманов</h2>
-                <p>основатель</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <!-- Foother -->
-
-    <footer>
-        <div class="ft-container">
-            <img src="images/logo.svg" alt="Geeklogo">
-            <div class="ft-parent">
-    
-    
-            </div>
-        </div>
-        </div>
-        <div class="scl-contatiner">
-            <div class="scl-parent">
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/Telegram_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/instagram.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/TikTok_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/YouTube_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/Facebook_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/whatsapp_2.svg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="ft-end">
-    
-        </div>
-    </footer>
+    {% include 'include/foother.html'%}
     </body>
     
     </html>

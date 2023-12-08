@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курсы программирования с нуля | Программирование для начинающих - школа GEEKS</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{% static  'css/main.css' %}">
 </head> 
 
 <body>
@@ -14,16 +15,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navigation">
-                    <div class="logo">
-                        <a href="#"><img src="images/logo.svg" alt="Geeks logo"></a>
-                    </div>
-                    <div class="navbar-nav">
-                        <a href="courses.html" class="navbar-a">курсы</a>
-                        <a href="geeksjunior.html" class="navbar-a">geeks junior</a>
-                        <a href="geekspro.html" class="navbar-a">geeks pro</a>
-                        <a href="about.html" class="navbar-a">о нас</a>
-                        <a href="https://www.geekstudio.kg/" class="navbar-a">GEEKSTUDIO</a>
-                    </div>
+                    {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
                         <a href="postcourse.html" target="_blank"><button>записаться</button></a>
                     </div>
@@ -36,8 +28,8 @@
             <div class="banner-container">
                 <div class="banner-content">
                     <div class="banner-des">
-                        <h1>ЗНАНИЯ С ГАРАНТИЕЙ</h1>
-                        <p>ИЗУЧАЙТЕ IT И СТАНЬТЕ ЭКСПЕРТОМ В СВОЕЙ ОБЛАСТИ</p>
+                        <h1>{{settings.header_title}}</h1>
+                        <p>{{settings.header_descriptions}}</p>
                         <a href="postcourse.html" target="_blank">
                         <button class="banner-btn1">ЗАПИСАТЬСЯ НА КУРС</button></a>
                         <a href="courses.html">
@@ -45,7 +37,7 @@
                     </div>
                 </div>
                 <div class="banner-img">
-                    <img src="images/bannerphoto.webp" alt="geeks">
+                    <img src="{% static 'images/bannerphoto.webp' %}" alt="geeks">
                 </div>
             </div>
         </div>
@@ -54,18 +46,12 @@
     <!-- header section end -->
     <!-- Плясы гитса -->
     <div class="columns">
+        {% for how in howareyou%}
         <div class="column">
-            <h1>КАРЬЕРА В IT-КОМПАНИИ</h1>
-            <p>Станьте частью новой культуры. Работайте над интересными проектами в команде с лучшими и получайте достойную оплату.</p>
+            <h1>{{how.title}}</h1>
+            <p>{{how.descriptions}}</p>
         </div>
-        <div class="column">
-            <h1>РАБОТАЙТЕ НА ФРИЛАНСЕ</h1>
-            <p>Работайте удалённо, принимая заказы из других стран. Высокий доход, свободный график и никакого начальника.</p>
-        </div>
-        <div class="column">
-            <h1>СОЗДАЙТЕ IT-СТАРТАП</h1>
-            <p>Научитесь воплощать свои идеи в жизнь. Постройте новый Google или Facebook. Реализуйте свои мечты.</p>
-        </div>
+        {% endfor %}
     </div>
     <!-- ПИРЕМУШЕСТВА -->
     <div class="box">
@@ -80,37 +66,12 @@
         </div>
         <div class="bottom-content">
             <div class="parent">
+                {% for learning in larning_geeks%}
                 <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repudiandae. Sequi, exercitationem saepe? Molestias iure temporibus modi deserunt, in culpa minima
-                        laboriosam.
-                        Quasi, ab sunt!</p>
+                        <h1>{{learning.title}}</h1>
+                        <p>{{learning.descriptions}}</p>
                 </div>
-    
-                <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repu</p>
-                </div>
-                <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repudiandae. Sequi, exercitationem saepe? Molestias iure temporibus modi deserunt, in culpa minima
-                        laboriosam.
-                        Quasi, ab sunt!</p>
-                </div>
-                <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repudiandae. Sequi, exercitationem saepe? Molestias iure temporibus modi deserunt, in culpa minima
-                        laboriosam.
-                        Quasi, ab sunt!</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -120,47 +81,25 @@
     <!-- Geeks в цифрах -->
     <div class="geeksint">
         <div class="geeksint-content">
+            {% for geeksints in geeksint %}
             <div class="gi-cont">
-                <h1>899 СТУДЕНТОВ</h1>
-                <p>Записались на наши курсы в 2023</p>
-            </div>
-            <div class="gi-cont">
-                <h1>899 СТУДЕНТОВ</h1>
-                <p>Записались на наши курсы в 2023</p>
-            </div>
-            <div class="gi-cont">
-                <h1>899 СТУДЕНТОВ</h1>
-                <p>Записались на наши курсы в 2023</p>
-            </div>
-            <div class="gi-cont">
-                <h1>899 СТУДЕНТОВ</h1>
-                <p>Записались на наши курсы в 2023</p>
-            </div>
-            <div class="gi-cont">
-                <h1>899 СТУДЕНТОВ</h1>
-                <p>Записались на наши курсы в 2023</p>
-            </div>
-            <div class="gi-cont">
-                <h1>899 СТУДЕНТОВ</h1>
-                <p>Записались на наши курсы в 2023</p>
-            </div>
-            
+                <h1>{{geeksints.title}}</h1>
+                <p>{{geeksints.descriptions}}</p>
+            </div> 
+            {% endfor %}
             
         </div>
     <!-- geeks online -->
     <div class="onl-container">
         <div class="onln-parent">
             <div class="chld1">
-                <h1>GEEKS ONLINE</h1>
-                <p>Geeks online - инаватционная образавательная плантформа, передстлавяюшая 
-                    доступ к качественному обучению Ит-профессиям где можно получить необхадимое
-                    знание от опытных переподавателей в любое удобное для вас время. 
-                </p>
+                <h1>{{geeks_online.title}}</h1>
+                <p>{{geeks_online.descriptions}}</p>
                 <a href="#"><button class="go-btn">ВОЙТИ</button></a>
                 
             </div>
             <div class="onln-img">
-                <img src="images/geeksonline.png" alt="geeks online">
+                <img src="{% static 'images/geeksonline.png' %}" alt="geeks online">
             </div>
         </div>
     </div>
@@ -175,54 +114,15 @@
         </div>
     </div>
     <div class="courses">
+        {% for course in courses%}
         <div class="course">
             <a href="course.html" class="course-link">
-                <img src="images/courses/productmanadjer.webp" alt="Course 1">
-                <h2>МЕНЕДЖЕР ПРОЕКТОВ</h2>
+                <img src="{{ course.image.url }}" alt="Course 1">
+                <h2>{{course.title}}</h2>
             </a>
         </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/fulstack.webp" alt="Course 2">
-                <h2>FULLSTACK-РАЗРАБОТЧИК</h2>
-            </a>
-        </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/uxui.webp" alt="Course 3">
-                <h2>UX/UI-ДИЗАЙНЕР</h2>
-            </a>
-        </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/android.webp" alt="Course 4">
-                <h2>ANDROID-РАЗРАБОТЧИК</h2>
-            </a>
-        </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/base.webp" alt="Course 4">
-                <h2>ОСНОВЫ ПРОГРАММИРОВАНИЯ</h2>
-            </a>
-        </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/backend.webp" alt="Course 4">
-                <h2>BACKEND-РАЗРАБОТЧИК</h2>
-            </a>
-        </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/frontend.webp" alt="Course 4">
-                <h2>FRONTEND-РАЗРАБОТЧИК</h2>
-            </a>
-        </div>
-        <div class="course">
-            <a href="#" class="course-link">
-                <img src="images/courses/qa.png" alt="Course 4">
-                <h2>ТЕСТИРОВЩИК ПО</h2>
-            </a>
-        </div>
+        {% endfor %}
+       
     </div>
     <!-- Пробный урок  -->
     <div class="pr-con">
@@ -236,13 +136,13 @@
         </div>
     </div>
     <div class="obsh-image">
-        <img src="images/geeksobsh.jpg" alt="geeks">
+        <img src="{% static 'images/geeksobsh.jpg' %}" alt="geeks">
     </div>
     <!-- КУРСЫ ПРОГРАММИРОВАНИЯ БИШКЕК -->
     <div class="cr-cont">
         <div class="crb-parent">
             <div class="child-cur">
-                <img src="images/coursesprogrammin1.webp" alt="">
+                <img src="{% static 'images/coursesprogrammin1.webp' %}" alt="">
             </div>
             <div class="child-cur">
                 <h1>КУРСЫ ПРОГРАММИРОВАНИЯ БИШКЕК</h1>
@@ -255,7 +155,7 @@
                 <a href="about.html"><button>ПОДРОБНЕ О НАС</button></a>
             </div>
             <div class="child-cur">
-                <img src="images/coursesprogrammin2.webp" alt="">
+                <img src="{% static 'images/coursesprogrammin2.webp' %}" alt="">
             </div>
         </div>
     </div>
@@ -263,50 +163,16 @@
    <div class="our-graduates">
     <h2>Наши выпускники</h2>
     <div class="graduates-container">
+        {% for student in students%}
         <div class="graduate">
-            <img src="images/mee.jpg" alt="Student 1">
-            <h3>Ахмаджанов Хикматилло 16 лет</h3>
-            <p>Software Enginer/ Google</p>
+            <img src="{{student.iamge.url}}" alt="Student 1">
+            <h3>{{student.name}}</h3>
+            <p>{{student.job}}</p>
         </div>
-        <div class="graduate">
-            <img src="images/muhammed.png" alt="Student 2">
-            <h3>Мухаммед Агибаев 34 года</h3>
-            <p>IT-аудитор/ Dos Credbank</p>
-        </div>
-        <div class="graduate">
-            <img src="images/alisher.png" alt="Student 3">
-            <h3>Алишер Абенов 16 лет</h3>
-            <p>Андроид разработчик/ Attactor Software</p>
-        </div>
-        <div class="graduate">
-            <img src="images/mee.jpg" alt="Student 1">
-            <h3>Ахмаджанов Хикматилло 16 лет</h3>
-            <p>Software Enginer/ Google</p>
-        </div>
-        <div class="graduate">
-            <img src="images/mee.jpg" alt="Student 1">
-            <h3>Ахмаджанов Хикматилло 16 лет</h3>
-            <p>Software Enginer/ Google</p>
-        </div>
-        <div class="graduate">
-            <img src="images/muhammed.png" alt="Student 2">
-            <h3>Мухаммед Агибаев 34 года</h3>
-            <p>IT-аудитор/ Dos Credbank</p>
-        </div>
-        <div class="graduate">
-            <img src="images/alisher.png" alt="Student 3">
-            <h3>Алишер Абенов 16 лет</h3>
-            <p>Андроид разработчик/ Attactor Software</p>
-        </div>
-        <div class="graduate">
-            <img src="images/mee.jpg" alt="Student 1">
-            <h3>Ахмаджанов Хикматилло 16 лет</h3>
-            <p>Software Enginer/ Google</p>
-        </div>
-  
+        {% endfor %}
         <div class="controls">
-            <img src="images/left.svg" alt="Назад" onclick="prevGraduates()">
-            <img src="images/right.svg" alt="Вперед" onclick="nextGraduates()">
+            <img src="{% static 'images/left.svg' %}" alt="Назад" onclick="prevGraduates()">
+            <img src="{% static 'images/right.svg' %}" alt="Вперед" onclick="nextGraduates()">
         </div>
 
     </div>
@@ -349,37 +215,14 @@
     <div class="rbs-graduates">
         <h2>ВЫПУСКНЫЕ РАБОТЫ СТУДЕНТОВ</h2>
         <div class="rbs-container">
+            {% for project in st_projects %}
             <div class="rbs-graduate">
-               <a href="#"><img src="images/okai.webp" alt="Student 1">
-                <h3>Okai</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+               <a href="#"><img src="{{project.image.url}}" alt="Student 1">
+                <h3>{{project.title}}</h3>
+                <p>{{project.descriptions}}</p>
                 </a>
             </div>
-            <div class="rbs-graduate">
-                <a href="#"><img src="images/okai.webp" alt="Student 1">
-                    <h3>Okai</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </a>
-            </div>
-            <div class="rbs-graduate">
-                <a href="#"><img src="images/okai.webp" alt="Student 1">
-                    <h3>Okai</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </a>
-            </div>
-            <div class="rbs-graduate">
-                <a href="#"><img src="images/okai.webp" alt="Student 1">
-                    <h3>Okai</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </a>
-            </div>
-            <div class="rbs-graduate">
-                <a href="#"><img src="images/okai.webp" alt="Student 1">
-                    <h3>Okai</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </a>
-            </div>
-    
+            {% endfor %}
         </div>
     </div>
 
@@ -392,44 +235,39 @@
 
                 <h3>Номер телефона</h3>
                 <ul>
-                    <li>+996 (557) 05 2018</li>
-                    <li>+996 (507) 05 2018</li>
-                    <li>+996 (777) 05 2018</li>
+                    <li>{{bishkek.phone}}</li>
                 </ul>
 
                 <h3>Email</h3>
                 <ul>
-                    <li>office@geeks.kg</li>
+                    <li>{{ bishkek.email }}</li>
                 </ul>
                 
                 <h3>Адрес</h3>
                 <ul>
-                    <a href="#"><li>ул. Ибраимова 103, БЦ “Victory”</li></a>
+                    <a href="#"><li>{{bishkek.addres_text}}</li></a>
                 </ul>
-
-                <button>Посмотреть в карте</button>
-
+                <a href="#"><button>Посмотреть в карте</button></a>
+                
             </div>
             <div class="cont-child">
                 <h2>Ош</h2>
 
                  <h3>Номер телефона</h3>
                 <ul>
-                    <li>+996 (557) 05 2018</li>
-                    <li>+996 (507) 05 2018</li>
-                    <li>+996 (777) 05 2018</li>
+                    <li>{{osh.phone}}</li>
                 </ul>
 
                 <h3>Email</h3>
                 <ul>
-                    <li>office@geeks.kg</li>
+                    <li>{{osh.email}}</li>
                 </ul>
                 
                 <h3>Адрес</h3>
                 <ul>
-                    <a href="#"><li>ул. Мырзалы Аматова 1Б, БЦ Томирис, цокольный этаж (здание Визион)</li></a>
+                    <a href="#"><li>{{osh.addres_text}}</li></a>
                 </ul>
-                <button>Посмотреть в карте</button>
+                <a href="#"><button>Посмотреть в карте</button></a>
 
             </div>
             <div class="cont-child">
@@ -437,74 +275,26 @@
 
                 <h3>Номер телефона</h3>
                 <ul>
-                    <li>+996 (557) 05 2018</li>
-                    <li>+996 (507) 05 2018</li>
-                    <li>+996 (777) 05 2018</li>
+                    <li>{{kara_balta.phone}}</li>
                 </ul>
                 
                 <h3>Email</h3>
                 <ul>
-                    <li>office@geeks.kg</li>
+                    <li>{{kara_balta.email}}</li>
                 </ul>
                 
                 <h3>Адрес</h3>
                 <ul>
                     <a href="#">
-                        <li>ул. Кожомбердиева 112, напротив Сах. завода, выше здания Олимпик</li>
+                        <li>{{kara_balta.addres_text}}</li>
                     </a>
                 </ul>
-                <button>Посмотреть в карте</button>
+                <a href="#"><button>Посмотреть в карте</button></a>
             </div>
         </div>
     </div>
     <!-- Foother -->
-    <footer>
-        <div class="ft-container">
-            <img src="images/logo.svg" alt="Geeklogo">
-            <div class="ft-parent">
-                
-               
-                </div>
-            </div>
-        </div>
-        <div class="scl-contatiner">
-            <div class="scl-parent">
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/Telegram_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/instagram.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/TikTok_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/YouTube_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/Facebook_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/whatsapp_2.svg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="ft-end">
-
-        </div>
-    </footer>
+    {% include 'include/foother.html'%}
 </body>
 
 </html>

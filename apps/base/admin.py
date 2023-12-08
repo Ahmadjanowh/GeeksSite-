@@ -52,11 +52,11 @@ class GeeksOnlineAdmin(admin.ModelAdmin):
     list_display = ('title','descriptions')
     search_fields = ('title','descriptions')
 
-@admin.register(GeeksHistory)
-class GeeksHistoryAdmin(admin.ModelAdmin):
+
+@admin.register(StudentsProject)
+class GeeksOnlineAdmin(admin.ModelAdmin):
     list_display = ('title','descriptions')
     search_fields = ('title','descriptions')
-
 
 
 

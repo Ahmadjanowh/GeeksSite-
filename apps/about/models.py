@@ -19,6 +19,13 @@ class Settings(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Настройки баннера'
+        verbose_name_plural = 'Настройка баннера'
+
 # ИСТОРИЯ СОЗДАНИЯ
 class HistoryCreated(models.Model):
     text = models.TextField(
@@ -30,6 +37,11 @@ class HistoryCreated(models.Model):
         verbose_name='Фото',
         blank=True,null=True
     )
+    def __str__(self) -> str:
+        return self.text
+    class Meta:
+        verbose_name = 'Истории создание'
+        verbose_name_plural = 'История создание'
 
 #НАШИ ЦЕННОСТИ
 class OurValues(models.Model):
@@ -48,6 +60,12 @@ class OurValues(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        verbose_name = 'Наши ценности'
+        verbose_name_plural = 'Наш сенност'
+
 # ПРИНЦИПЫ РАБОТЫ
 class Principles_work(models.Model):
     image = models.ImageField(
@@ -64,6 +82,11 @@ class Principles_work(models.Model):
         verbose_name='Описание',
         blank=True,null=True
     )
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        verbose_name = 'Принципы работы'
+        verbose_name_plural = 'Принцип работы'
 
 # НАША КОМАНДА
 class Team(models.Model):
@@ -82,4 +105,9 @@ class Team(models.Model):
         verbose_name='Звание',
         blank=True,null=True
     )
+    def __str__(self) -> str:
+        return self.name
+    class Meta:
+        verbose_name = 'Наши коаманда'
+        verbose_name_plural = 'Команда'
         

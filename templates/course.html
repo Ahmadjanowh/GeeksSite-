@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курсы</title>
-    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="{% static 'css/course.css' %}">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
             <div class="container">
                 <div class="navigation">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.svg" alt="Geeks logo"></a>
+                        <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="Geeks logo"></a>
                     </div>
                     <div class="navbar-nav">
                         <a href="courses.html" class="navbar-a">курсы</a>
@@ -43,7 +44,7 @@
                     </div>
                 </div>
                 <div class="banner-img">
-                    <img src="images/bannerphoto.webp" alt="geeks">
+                    <img src="{% static 'images/bannerphoto.webp' %}" alt="geeks">
                 </div>
             </div>
         </div>
@@ -53,7 +54,7 @@
     <!-- Foother -->
     <footer>
         <div class="ft-container">
-            <img src="images/logo.svg" alt="Geeklogo">
+            <img src="{% static 'images/logo.svg' %}" alt="Geeklogo">
             <div class="ft-parent">
                 <div class="ft-child">
                     <h3>Курсы</h3>
@@ -117,32 +118,32 @@
             <div class="scl-parent">
                 <div class="socl-icon">
                     <a href="#">
-                        <img src="images/Telegram_-_Original.svg" alt="">
+                        <img src="{% static 'images/Telegram_-_Original.svg' %}" alt="">
                     </a>
                 </div>
                 <div class="socl-icon">
                     <a href="#">
-                        <img src="images/instagram.svg" alt="">
+                        <img src="{% static 'images/instagram.svg' %}" alt="">
                     </a>
                 </div>
                 <div class="socl-icon">
                     <a href="#">
-                        <img src="images/TikTok_-_Original.svg" alt="">
+                        <img src="{% static 'images/TikTok_-_Original.svg' %}" alt="">
                     </a>
                 </div>
                 <div class="socl-icon">
                     <a href="#">
-                        <img src="images/YouTube_-_Original.svg" alt="">
+                        <img src="{% static 'images/YouTube_-_Original.svg' %}" alt="">
                     </a>
                 </div>
                 <div class="socl-icon">
                     <a href="#">
-                        <img src="images/Facebook_-_Original.svg" alt="">
+                        <img src="{% static 'images/Facebook_-_Original.svg' %}" alt="">
                     </a>
                 </div>
                 <div class="socl-icon">
                     <a href="#">
-                        <img src="images/whatsapp_2.svg" alt="">
+                        <img src="{% static 'images/whatsapp_2.svg' %}" alt="">
                     </a>
                 </div>
             </div>

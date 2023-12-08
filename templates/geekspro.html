@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курсы программирования с нуля | Программирование для начинающих - школа GEEKS</title>
-    <link rel="stylesheet" href="css/geekspro.css">
+    <link rel="stylesheet" href="{% static 'css/geekspro.css' %}">
 </head>
 
 <body>
@@ -14,16 +15,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navigation">
-                    <div class="logo">
-                        <a href="index.html"><img src="images/logo.svg" alt="Geeks logo"></a>
-                    </div>
-                    <div class="navbar-nav">
-                        <a href="courses.html" class="navbar-a">курсы</a>
-                        <a href="geeksjunior.html" class="navbar-a">geeks junior</a>
-                        <a href="geekspro.html" class="navbar-a">geeks pro</a>
-                        <a href="about.html" class="navbar-a">о нас</a>
-                        <a href="https://www.geekstudio.kg/" class="navbar-a" target="_blank">GEEKSTUDIO</a>
-                    </div>
+                    {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
                         <a href="postgeekspro.html" target="_blank"><button>записаться</button></a>
                     </div>
@@ -35,12 +27,12 @@
         <div class="banner-container">
             <div class="banner-parent">
                 <div class="title">
-                    <h1>GEEKS PRO</h1>
-                    <p>ИЗУЧАЙТЕ IT И СТАНЬТЕ ЭКСПЕРТОМ В СВОЕЙ ОБЛАСТИ</p>
+                    <h1>{{settings.banner_title}}</h1>
+                    <p>{{settings.banner_descriptions}}</p>
                     <a href="postgeekspro.html" target="_blank"><button>заявка в geeks pro </button></a>
                 </div>
                 <div class="image">
-                    <img src="images/geekspro/baner.png" alt="geeks junior" style="max-width: 75%;">
+                    <img src="{{settings.banner_image.url}}" alt="geeks junior" style="max-width: 75%;">
                 </div>
             </div>
         </div>
@@ -51,22 +43,12 @@
     <!-- статистика -->
     <div class="pr-container">
         <div class="pr-parent">
+            {% for statis in statistics%}
             <div class="pr">
-                <h1>25</h1>
-                <p>трудоустроенных студентов</p>
+                <h1>{{static.title}}</h1>
+                <p>{{statis.descriptions}}</p>
             </div>
-            <div class="pr">
-                <h1>76</h1>
-                <p>выпускников проходят стажировку</p>
-            </div>
-            <div class="pr">
-                <h1>96</h1>
-                <p>выпускников закончили стажировку</p>
-            </div>
-            <div class="pr">
-                <h1>20</h1>
-                <p>компаний заключили с нами партнерское соглашение</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -74,53 +56,23 @@
     <div class="how-gekspro-cont">
         <h1 >ПОЧЕМУ GEEKS PRO?</h1>
         <div class="how-geekspro-pr">
+            {% for how in howgeekspro %}
             <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
+                <h2>{{how.title}}</h2>
             </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
-            <div class="how-geekspro">
-                <h2>ТРЕНИНГИ И МАСТЕР-КЛАССЫ</h2>
-            </div>
+           {% endfor %}
         </div>
     </div>
 
     <!-- вопросы ответы -->
     <div class="faq-conatiner">
         <div class="faq-parent">
+            {% for f in faq %}
             <div class="faq-child">
-                <h2>КТО МОЖЕТ СТАЖИРОВАТЬСЯ В GEEKS PRO?</h2>
-                <p>Geeks Pro предоставляет возможность стажировки как для выпускников Geeks, так и других образовательных центров, курсов и
-                ВУЗов.</p>
+                <h2>{{f.title}}</h2>
+                <p>{{f.descriptions}}</p>
             </div>
-            <div class="faq-child">
-                <h2>КТО МОЖЕТ СТАЖИРОВАТЬСЯ В GEEKS PRO?</h2>
-                <p>Geeks Pro предоставляет возможность стажировки как для выпускников Geeks, так и других образовательных центров,
-                    курсов и
-                    ВУЗов.</p>
-            </div>
-            <div class="faq-child">
-                <h2>КТО МОЖЕТ СТАЖИРОВАТЬСЯ В GEEKS PRO?</h2>
-                <p>Geeks Pro предоставляет возможность стажировки как для выпускников Geeks, так и других образовательных центров,
-                    курсов и
-                    ВУЗов.</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -128,77 +80,16 @@
     <div class="partner-cont">
         <h1>НАШИ ПАРТНЕРЫ</h1>
         <div class="partner-parent">
+            {% for part in partners%}
             <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
+                <a href="#"><img src="{{part.image.url}}" alt=""></a>
             </div>
-            <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
-            </div>
-            <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
-            </div>
-            <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
-            </div>
-            <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
-            </div>
-            <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
-            </div>
-            <div class="partner">
-                <a href="#"><img src="images/geekspro/il.png" alt=""></a>
-            </div>
+            {% endfor %}
+            
         </div>
     </div>
         <!-- Foother -->
-        <footer>
-            <div class="ft-container">
-                <img src="images/logo.svg" alt="Geeklogo">
-                <div class="ft-parent">
-        
-        
-                </div>
-            </div>
-            </div>
-            <div class="scl-contatiner">
-                <div class="scl-parent">
-                    <div class="socl-icon">
-                        <a href="#">
-                            <img src="images/Telegram_-_Original.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="socl-icon">
-                        <a href="#">
-                            <img src="images/instagram.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="socl-icon">
-                        <a href="#">
-                            <img src="images/TikTok_-_Original.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="socl-icon">
-                        <a href="#">
-                            <img src="images/YouTube_-_Original.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="socl-icon">
-                        <a href="#">
-                            <img src="images/Facebook_-_Original.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="socl-icon">
-                        <a href="#">
-                            <img src="images/whatsapp_2.svg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="ft-end">
-        
-            </div>
-        </footer>
+        {% include 'include/foother.html'%}
         </body>
         
         </html>

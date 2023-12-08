@@ -18,6 +18,13 @@ class Settings(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) -> str:
+        return self.banner_title
+    
+    class Meta:
+        verbose_name = 'Настройки беннера'
+        verbose_name_plural = 'Натройка баннера'
+
 # Статистика
 class StatisticGeekspro(models.Model):
     title = models.CharField(
@@ -31,12 +38,25 @@ class StatisticGeekspro(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) :
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Статистики'
+        verbose_name_plural = 'Статистика'
+
 # Почему GeeksPro
 class HowGeeksPro(models.Model):
     title = models.TextField(
         max_length=800,
         verbose_name='Почему именно GeeksPro'
     )
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Почему Geekspro'
+        verbose_name_plural = 'Почему Geekspro'
 
 # Попросы ответы
 class GeeksproFAQ(models.Model):
@@ -50,16 +70,28 @@ class GeeksproFAQ(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Вопросы ответы'
+        verbose_name_plural = 'Вопросы ответы'
+
 # Парнеры
 class Partners(models.Model):
     link = models.URLField(
         verbose_name='Сылка',
         blank=True,null=True
     )
-    iamge = models.ImageField(
+    image = models.ImageField(
         upload_to='partner_images/',
         verbose_name='Фото',
         blank=True,null=True
     )
+
+    class Meta:
+        verbose_name = 'Партеры'
+        verbose_name_plural = 'Парноры'
+        
     
     

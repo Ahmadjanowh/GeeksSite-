@@ -1,0 +1,11 @@
+{% load static %}
+<div class="logo">
+    <a href="{% url 'index' %}"><img src="{% static 'images/logo.svg' %}" alt="Geeks logo"></a>
+</div>
+<div class="navbar-nav">
+    <a href="{% url 'courses' %}" class="navbar-a">курсы</a>
+    <a href="{% url 'geeksjunior' %}" class="navbar-a">geeks junior</a>
+    <a href="{% url 'geekspro' %}" class="navbar-a">geeks pro</a>
+    <a href="{% url 'about' %}" class="navbar-a">о нас</a>
+    <a href="https://www.geekstudio.kg/" class="navbar-a" target="_blank">GEEKSTUDIO</a>
+</div>

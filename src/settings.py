@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'apps.about',
     'apps.courses',
     'apps.geeksjunior',
-    'apps.geekspro'
+    'apps.geekspro',
 
 ]
 

@@ -10,11 +10,6 @@ class Settings(models.Model):
         verbose_name='Заголовок сайта',
         blank=True,null=True 
     )
-    logo = models.ImageField(
-        upload_to='logo_images/',
-        verbose_name='Логотип сайта',
-        blank=True,null=True
-    )
     header_title = models.CharField(
         max_length=255,
         verbose_name='Загаловок header части',
@@ -57,7 +52,7 @@ class Settings(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.title, self.header_title
+        return self.header_title
     
     class Meta:
         verbose_name = 'Основные настройки'
@@ -76,7 +71,7 @@ class HowAreYou(models.Model):
         blank=True,null=True
     )
     def __str__(self) -> str:
-        return self.title, self.descriptions
+        return self.title
     
     class Meta:
         verbose_name = 'Кем ты можеш стать после курса'
@@ -94,7 +89,7 @@ class LearningGeeks(models.Model):
         blank=True,null=True
     )
     def __str__(self) -> str:
-        return self.title, self.descriptions
+        return self.title
     
     class Meta:
         verbose_name = 'Почему стоить учиться в Geeks ?'
@@ -113,7 +108,7 @@ class GeeksInt(models.Model):
         blank=True,null=True
     )
     def __str__(self) -> str:
-        return self.title, self.descriptions
+        return self.title
     
     class Meta:
         verbose_name = 'Geek в цифрах'
@@ -140,39 +135,12 @@ class GeeksOnline(models.Model):
         blank=True,null=True
     )
     def __str__(self) -> str:
-        return self.title, self.descriptions
+        return self.title
     
     class Meta:
         verbose_name = 'Geek Онлайн'
         verbose_name_plural = 'Geeks Онлайн'
 
-# КУРСЫ ПРОГРАММИРОВАНИЯ БИШКЕК (ИСТОРИЯ GEEKS)
-class GeeksHistory(models.Model):
-    image_1 = models.ImageField(
-        upload_to='history_images/',
-        verbose_name='Первое фото',
-        blank=True,null=True
-    )
-    image_2 = models.ImageField(
-        upload_to='history_images/',
-        verbose_name='Второе фото',
-        blank=True,null=True
-    )
-    title = models.CharField(
-        max_length=255,
-        verbose_name='Загаловок',
-        blank=True,null=True
-    )
-    descriptions = models.TextField(
-        verbose_name='Описание',
-        blank=True,null=True
-    )
-    def __str__(self) -> str:
-        return self.title, self.descriptions
-    
-    class Meta:
-        verbose_name = 'История Geeks'
-        verbose_name_plural = 'История Geeks'
 
 # Курсы для главного 
 class CoursesIndex(models.Model):
@@ -187,7 +155,7 @@ class CoursesIndex(models.Model):
         blank=True,null=True
     )
     def __str__(self) -> str:
-        return self.title, self.descriptions
+        return self.title
     
     class Meta:
         verbose_name = 'Курсы'
@@ -212,16 +180,17 @@ class Students(models.Model):
         blank=True,null=True
     )
     def __str__(self) -> str:
-        return self.title, self.descriptions
+        return self.name
     
     class Meta:
         verbose_name = 'Студенты'
         verbose_name_plural = 'Студент'
- 
+
+
 # Контактные информатции филиалов 
 # Бишкек
 class Bishkek(models.Model):
-    phoene = models.CharField(
+    phone = models.CharField(
         max_length=255,
         verbose_name='Номмер телефона',
         blank=True,null=True
@@ -241,7 +210,7 @@ class Bishkek(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.email, self.addres_text
+        return self.phoene
     
     class Meta:
         verbose_name = 'Контактный данные Бишкек'
@@ -249,7 +218,7 @@ class Bishkek(models.Model):
 
 # ОШ
 class Osh(models.Model):
-    phoene = models.CharField(
+    phone = models.CharField(
         max_length=255,
         verbose_name='Номмер телефона',
         blank=True,null=True
@@ -268,8 +237,8 @@ class Osh(models.Model):
         blank=True,null=True
     )
 
-    def __str__(self) -> str:
-        return self.email, self.addres_text
+    def __str__(self):
+        return self.phone
     
     class Meta:
         verbose_name = 'Контактный данные ОШ'
@@ -277,7 +246,7 @@ class Osh(models.Model):
 
 # Кара-Балта
 class KaraBalta(models.Model):
-    phoene = models.CharField(
+    phone = models.CharField(
         max_length=255,
         verbose_name='Номмер телефона',
         blank=True,null=True
@@ -297,7 +266,7 @@ class KaraBalta(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.email, self.addres_text
+        return self.phone
     
     class Meta:
         verbose_name = 'Контактный данные Кара-Балта'
@@ -325,3 +294,9 @@ class StudentsProject(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Выпускные работы стаудентов'
+        verbose_name_plural = 'Выпускное работа студента '

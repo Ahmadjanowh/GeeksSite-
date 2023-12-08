@@ -8,6 +8,11 @@ class Courses(models.Model):
         verbose_name='Фотография',
         blank=True,null=True
     )
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Название',
+        blank=True,null=True
+    )
     start = models.CharField(
         max_length=255,
         verbose_name='Название курса',
@@ -17,6 +22,13 @@ class Courses(models.Model):
         verbose_name='Опсание',
         blank=True,null=True
     )
+
+    def __str__(self) -> str:
+        return self.title
+
+    class Meta:
+        verbose_name = 'Добавить курс'
+        verbose_name_plural = 'Добавить курс'
 
 # Определонный курс
 class Cours(models.Model):
@@ -68,7 +80,14 @@ class Cours(models.Model):
         blank=True,null=True
     )
 
-class Tehnalogis(models.Manager):
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Добробне о курса'
+        verbose_name_plural = 'Подробне о курса'
+
+class Tehnalogis(models.Model):
     title = models.CharField(
         max_length=255,
         verbose_name='Загаловок',
@@ -79,3 +98,10 @@ class Tehnalogis(models.Manager):
         verbose_name='Фотография',
         blank=True,null=True
     )
+
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Что изучет'
+        verbose_name_plural = 'Что изучет'

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курсы программирования с нуля | Программирование для начинающих - школа GEEKS</title>
-    <link rel="stylesheet" href="css/geeksjunior.css">
+    <link rel="stylesheet" href="{% static 'css/geeksjunior.css' %}">
 </head>
 <body>
     <!-- header section start -->
@@ -13,16 +14,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navigation">
-                    <div class="logo">
-                        <a href="index.html"><img src="images/logo.svg" alt="Geeks logo"></a>
-                    </div>
-                    <div class="navbar-nav">
-                        <a href="courses.html" class="navbar-a">курсы</a>
-                        <a href="geeksjunior.html" class="navbar-a">geeks junior</a>
-                        <a href="geekspro.html" class="navbar-a">geeks pro</a>
-                        <a href="about.html" class="navbar-a">о нас</a>
-                        <a href="https://www.geekstudio.kg/" class="navbar-a" target="_blank">GEEKSTUDIO</a>
-                    </div>
+                    {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
                         <a href="postdes.html" target="_blank"><button>записаться</button></a>
                     </div>
@@ -34,12 +26,12 @@
        <div class="banner-container">
         <div class="banner-parent">
             <div class="title">
-                <h1>GEEKS JUNIOR</h1>
-                <p>КУРСЫ IT ДЛЯ ДЕТЕЙ И ПОДРОСТКОВ ОТ 7 ДО 18 ЛЕТ</p>
+                <h1>{{ettings.bannet_title}}</h1>
+                <p>{{settings.banner_descriptions}}</p>
                 <a href="postdes.html"><button>записаться на курс</button></a>
             </div>
             <div class="image">
-                <img src="images/geeksjunior/banner.png" alt="geeks junior">
+                <img src="{{settings.banner_image.url}}" alt="geeks junior">
             </div>
         </div>
        </div>
@@ -47,22 +39,12 @@
     </header>
     <div class="pr-container">
         <div class="pr-parent">
+            {% for st in statistic%}
             <div class="pr">
-                <h1>5</h1>
-                <p>Лет на рынке</p>
+                <h1>{{st.title}}</h1>
+                <p>{{st.description}}</p>
             </div>
-            <div class="pr">
-                <h1>150+</h1>
-                <p>Сотрудников</p>
-            </div>
-            <div class="pr">
-                <h1>1000+</h1>
-                <p>Действующих студентов</p>
-            </div>
-            <div class="pr">
-                <h1>2000+</h1>
-                <p>Довольных выпускников</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <!-- ПОЧЕМУ стоит учиться в geeks JUNIOR -->
@@ -75,117 +57,47 @@
             </div>
         </div>
             <div class="parent">
+                {% for how in howjunior %}
                 <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repudiandae. Sequi, exercitationem saepe? Molestias iure temporibus modi deserunt, in culpa minima
-                        laboriosam.
-                        Quasi, ab sunt!</p>
+                    <h1>{{how.title}}</h1>
+                    <p>{{how.descriptions}}</p>
                 </div>
-    
-                <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repu</p>
-                </div>
-                <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repudiandae. Sequi, exercitationem saepe? Molestias iure temporibus modi deserunt, in culpa minima
-                        laboriosam.
-                        Quasi, ab sunt!</p>
-                </div>
-                <div class="child">
-                    <h1>Word this</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti magni officiis deserunt
-                        ducimus
-                        repudiandae. Sequi, exercitationem saepe? Molestias iure temporibus modi deserunt, in culpa minima
-                        laboriosam.
-                        Quasi, ab sunt!</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
     <!-- Courses -->
     <div class="crs-container">
         <div class="crs-parent">
+             {% for cours in courses %}
+
             <div class="crs">
                 <div class="crs-items">
                     <div class="icon">
-                        <img src="images/courses/prmendjer.svg" alt="">
+                        <img src="{{cours.iamge.url}}" alt="">
                     </div>
                     <div class="start">
-                        <p>Старт: 19.12.2023</p>
+                        <p>{{cours.start}}</p>
                     </div>
                     <div class="title-cr">
-                        <h1>МЕНЕДЖЕР ПРОЕКТОВ</h1>
+                        <h1>{{cours.title}}</h1>
                     </div>
                     <div class="des">
-                        <p>Стань Менеджером проектов с нуля за 2 месяца! Получи доступ к стажировке и помощь в
-                            трудоустройстве!</p>
+                        <p>{{ cours.description}}</p>
                     </div>
                     <div class="moth">
-                        <p>Длительность: 2 месяца</p>
+                        <p>Длительность: {{cours.moth}}</p>
                     </div>
                     <div class="more">
                         <a href="#">
                             <p>подробне -></p>
                         </a>
                     </div>
-                </div>
-            </div>
-            <div class="crs">
-                <div class="crs-items">
-                    <div class="icon">
-                        <img src="images/courses/prmendjer.svg" alt="">
-                    </div>
-                    <div class="start">
-                        <p>Старт: 19.12.2023</p>
-                    </div>
-                    <div class="title-cr">
-                        <h1>МЕНЕДЖЕР ПРОЕКТОВ</h1>
-                    </div>
-                    <div class="des">
-                        <p>Стань Менеджером проектов с нуля за 2 месяца! Получи доступ к стажировке и помощь в
-                            трудоустройстве!</p>
-                    </div>
-                    <div class="moth">
-                        <p>Длительность: 2 месяца</p>
-                    </div>
-                    <div class="more">
-                        <a href="#">
-                            <p>подробне -></p>
-                        </a>
+
                     </div>
                 </div>
-            </div>
-            <div class="crs">
-                <div class="crs-items">
-                    <div class="icon">
-                        <img src="images/courses/prmendjer.svg" alt="">
-                    </div>
-                    <div class="start">
-                        <p>Старт: 19.12.2023</p>
-                    </div>
-                    <div class="title-cr">
-                        <h1>МЕНЕДЖЕР ПРОЕКТОВ</h1>
-                    </div>
-                    <div class="des">
-                        <p>Стань Менеджером проектов с нуля за 2 месяца! Получи доступ к стажировке и помощь в
-                            трудоустройстве!</p>
-                    </div>
-                    <div class="moth">
-                        <p>Длительность: 2 месяца</p>
-                    </div>
-                    <div class="more">
-                        <a href="#">
-                            <p>подробне -></p>
-                        </a>
-                    </div>
-                </div>
+            {% endfor %}
+
             </div>
         </div>
     </div>
@@ -194,68 +106,21 @@
         <div class="pru-containre">
             <div class="pru-parent">
                 <div class="pru">
-                    <h1>ПОСЕТИТЕ БЕСПЛАТНЫЙ УРОК И ПОЛУЧИТЕ СКИДКУ</h1>
-                    <p>Бесплатный пробный урок - это лучший способ понять, подходит ли вашему ребенку то или иное направление, а также увидеть
-                    своими глазами, где и как он будет обучаться.</p>
+                    <h1>{{free_lesson.title}}</h1>
+                    <p>{{free_lesson.description}}</p>
                     <a href="#">
                         <button>записаться на пробный урок</button>
                     </a>
                 </div>
                 <div class="pru">
-                    <img src="images/geeksjunior/girl.png" alt="geeksjunior">
+                    <img src="{{free_lesson.image.url}}" alt="geeksjunior">
                 </div>
             </div>
         </div>
 
     
     <!-- Foother -->
-    <footer>
-        <div class="ft-container">
-            <img src="images/logo.svg" alt="Geeklogo">
-            <div class="ft-parent">
-    
-    
-            </div>
-        </div>
-        </div>
-        <div class="scl-contatiner">
-            <div class="scl-parent">
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/Telegram_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/instagram.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/TikTok_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/YouTube_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/Facebook_-_Original.svg" alt="">
-                    </a>
-                </div>
-                <div class="socl-icon">
-                    <a href="#">
-                        <img src="images/whatsapp_2.svg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="ft-end">
-    
-        </div>
-    </footer>
+    {% include 'include/foother.html'%}
     </body>
     
     </html>

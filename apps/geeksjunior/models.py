@@ -18,6 +18,12 @@ class Settings(models.Model):
         verbose_name='Баннер описание',
         blank=True,null=True
     )
+    def __str__(self) -> str:
+        return self.banner_title
+    
+    class Meta:
+        verbose_name = 'Настройки баннера',
+        verbose_name_plural = 'Настройка баннера'
 
 # Статистика
 class Statistic(models.Model):
@@ -31,6 +37,11 @@ class Statistic(models.Model):
         verbose_name='Описание',
         blank=True,null=True
     )
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        verbose_name = 'Статистика'
+        verbose_name_plural = 'Статистика '
 
 # ПОЧЕМУ СТОИТ ВЫБРАТЬ GEEKS JUNIOR
 class HowJunior(models.Model):
@@ -43,6 +54,11 @@ class HowJunior(models.Model):
         verbose_name='Описание',
         blank=True,null=True
     )
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        verbose_name = 'Почему стоит выбрать GeeksJunior'
+        verbose_name_plural = 'Почему стоить выбрать Geeks Junior'
 
 # Курсы GeeksJunior
 class GeekaJuniorCourses(models.Model):
@@ -71,6 +87,12 @@ class GeekaJuniorCourses(models.Model):
         blank=True,null=True
     )
 
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        verbose_name = 'Курсы Geeks Junior'
+        verbose_name_plural = 'Курс geeks junior'
+
 # ПОСЕТИТЕ БЕСПЛАТНЫЙ УРОК И ПОЛУЧИТЕ СКИДКУ
 class FreLesson(models.Model):
     image  = models.ImageField(
@@ -87,4 +109,10 @@ class FreLesson(models.Model):
         verbose_name='Описание',
         blank=True,null=True
     )
+
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        verbose_name = 'Пробный урок'
+        verbose_name_plural = 'Пробный урок'
     
