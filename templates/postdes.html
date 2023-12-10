@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,8 @@
         <div class="parent">
             <div class="child">
                 <h3>Зполнити форму и наша менеджера свяжутся с вами</h3>
-                <form action="/submit_course_form" method="post">
+                <form  method="post">
+                    {% csrf_token %}
                     <p>Имя</p>
                     <input type="text" id="name" name="name" required placeholder="Имя"><br><br>
 
@@ -25,9 +27,9 @@
 
                     <p>Выбери курс</p>
                     <select id="course" name="course">
-                        <option value="course1">Детское програмироване</option>
-                        <option value="course2">Роботот техника</option>
-                        <option value="course3">Введение ИИ</option>
+                        {% for csr in juniorselect %}
+                        <option value="{{csr.name}}">{{csr.name}}</option>
+                        {% endfor %}
                         <!-- Добавьте другие курсы по аналогии -->
                     </select><br><br>
 

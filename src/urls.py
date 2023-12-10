@@ -26,7 +26,8 @@ urlpatterns = [
     path('courses',include('apps.courses.urls')),
     path('geeksjunior',include('apps.geeksjunior.urls')) ,
     path('geekspro',include('apps.geekspro.urls')),
-    path('about',include('apps.about.urls'))
+    path('about',include('apps.about.urls')),
+    path('posts',include('apps.singup.urls'))
 
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

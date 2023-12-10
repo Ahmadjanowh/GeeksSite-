@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from apps.base.models import *
+from apps.courses.models import Course
+from apps.courses.views import *
 # Create your views here.
 
 def index(requests):
@@ -13,6 +15,9 @@ def index(requests):
     osh = Osh.objects.latest('id')
     kara_balta = KaraBalta.objects.latest('id')
     st_projects = StudentsProject.objects.all()
-    courses = CoursesIndex.objects.all()
+    courses = Course.objects.all()
 
     return render(requests,'index.html',locals())
+def course_detail(request,pk):
+    course = get_object_or_404(Course,pk=pk)
+    return render(request,'course.html', {'course': course})

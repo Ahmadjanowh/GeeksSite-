@@ -148,145 +148,153 @@ header {
 
 /* Banner */
 .banner {
-    margin-top: 7%;
-    width: 100%;
-    height: auto;
+    margin-top: 10%;
+    width: 60%;
+    margin-left: 10%;
 }
 
-.banner-container {
-    display: grid;
-    grid-template-columns: 10% 90%;
-    width: 80%;
-    height: 100%;
-    margin-top: 15%;
-}
-
-.bn-child1 {
-    background-color: var(--geeks);
-    width: 30%;
-    height: 100%;
-}
-
-.bn-child {
-    margin-top: 5%;
-}
-
-.bn-child h1 {
+.banner h1 {
     color: var(--geeks);
-    font-size: 50px;
-    text-transform: uppercase;
-}
-
-.bn-child h2 {
-    color: white;
     font-size: 40px;
-    text-transform: uppercase;
 }
 
-.bn-child p {
-    padding: 10px;
-    color: rgb(199, 195, 195);
+.banner h2 {
+    color: white;
+    font-size: 25px;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.banner h3 {
+    margin-left: 5%;
     font-size: 20px;
-    max-width: 75%;
-    text-transform: uppercase;
-
+    color: var(--geeks);
+    margin-top: 10px;
 }
 
-/* Courses sections */
-.crs-container {
-    width: 100%;
-    height: auto;
+.banner p {
+    color: white;
+    margin-left: 5%;
+    margin-top: 15px;
 }
 
-.crs-parent {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 10px;
-    margin: 20px;
-    padding: 20px;
-}
-
-.crs {
-    background-color: white;
-}
-
-.crs-items {
-    display: grid;
-    grid-template-columns: 100%;
-
-}
-
-.icon {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 6%;
+.banner button {
+    margin-left: 5%;
     padding: 10px;
-}
-
-.start {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-transform: uppercase;
+    margin-top: 20px;
     background-color: var(--geeks);
-    width: 45%;
-    border-radius: 20px;
-    margin-top: 6%;
-    padding: 10px;
-    color: #2c2e35;
 }
 
-.title {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-transform: uppercase;
-    margin-top: 4%;
-    padding: 10px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.info-container {
+    width: 90%;
+    margin: 0 auto;
 }
 
-.des {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-transform: uppercase;
-    padding: 10px;
-    color: #47474b;
-}
-
-.moth {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-transform: uppercase;
-    padding: 5px;
-    color: #47474b;
+.info-parent {
+    display: grid;
+    grid-template-columns: 50% 50%;
 
 }
 
-.more {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-transform: uppercase;
-    margin-bottom: 10%;
-    margin-top: 5%;
-    padding: 10px;
-    color: #47474b;
+.sts-parent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 30px;
+    margin-top: 20%;
 }
 
-.more p {
-    color: #2b2b2b;
-    transition: opacity 0.7 ease;
+.moth-t h1 {
+    color: var(--geeks);
+    text-align: center;
+
 }
 
-.more p:hover {
-    opacity: 0.7;
+.moth-t p {
+    color: white;
+    text-align: center;
 }
 
-/* Footeher */
+.price h1 {
+    color: var(--geeks);
+}
+
+.price p {
+    color: white;
+}
+
+.lessons h1 {
+    color: var(--geeks);
+    text-align: center;
+}
+
+.lessons p {
+    color: white;
+    text-align: center;
+}
+
+.techers h1 {
+    color: var(--geeks);
+}
+
+.techers p {
+    color: white;
+}
+
+.sts-img img {
+    width: 100%;
+}
+
+.how {
+    width: 90%;
+    margin: 40px 10% 0px 10%;
+}
+.how h1{
+    color: var(--geeks);
+    margin: 40px;
+    padding: 15px;
+    font-size: 40px;
+}
+.paret {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.how-img img {
+    width: 100%;
+}
+
+.how-text p {
+
+    color: white;
+    font-size: 20px;
+    width: 90%;
+    margin: 10% 10%;
+}
+
+.learn {
+    height: 500px;
+    background-color: white;
+
+
+}
+
+.learn h1 {
+    color: var(--geeks);
+    margin: 20px 30px;
+    padding: 15px;
+    font-size: 50px;
+
+}
+
+.learn-parent {
+    width: 90%;
+    margin: 5% 10%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.leart-con {}
+
 footer {}
 
 .ft-container {
@@ -372,101 +380,155 @@ footer {}
         text-align: center;
     }
 
-
-
-    /* Courses sections */
-    .crs-container {
-        width: 100%;
-        height: auto;
-    }
-
-    .crs-parent {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 10px;
-        margin: 20px;
-        padding: 20px;
-    }
-
-    .crs {
-        background-color: white;
-    }
-
-    .crs-items {
-        display: grid;
-        grid-template-columns: 100%;
-
-    }
-
-    .icon {
-        width: 80%;
+   .banner {
+        margin-top: 20%;
+        width: 60%;
         margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 6%;
+    }
+
+    .banner h1 {
+        color: var(--geeks);
+        font-size: 30px;
+    }
+
+    .banner h2 {
+        color: white;
+        font-size: 20px;
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+
+    .banner h3 {
+        margin-left: 5%;
+        font-size: 20px;
+        color: var(--geeks);
+        margin-top: 10px;
+    }
+
+    .banner p {
+        color: white;
+        margin-left: 5%;
+        margin-top: 15px;
+    }
+
+    .banner button {
+        margin-left: 5%;
         padding: 10px;
-    }
-
-    .start {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-transform: uppercase;
+        margin-top: 20px;
         background-color: var(--geeks);
-        width: 45%;
-        border-radius: 20px;
-        margin-top: 6%;
-        padding: 10px;
-        color: #2c2e35;
     }
 
-    .title {
+    .info-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .info-parent {
+        display: grid;
+        grid-template-columns: 100% ;
+
+    }
+
+    .sts-parent {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        font-size: 30px;
+        margin-top: 20%;
+    }
+
+    .moth-t h1 {
+        color: var(--geeks);
+        text-align: center;
+
+    }
+
+    .moth-t p {
+        color: white;
+        text-align: center;
+    }
+
+    .price h1 {
+        color: var(--geeks);
+    }
+
+    .price p {
+        color: white;
+    }
+
+    .lessons h1 {
+        color: var(--geeks);
+        text-align: center;
+    }
+
+    .lessons p {
+        color: white;
+        text-align: center;
+    }
+
+    .techers h1 {
+        color: var(--geeks);
+    }
+
+    .techers p {
+        color: white;
+    }
+
+    .sts-img img {
         width: 80%;
+        margin-top: 40px;
+        height: 400px;
         margin-left: 10%;
-        margin-right: 10%;
-        text-transform: uppercase;
-        margin-top: 4%;
-        padding: 10px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
-    .des {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-transform: uppercase;
-        padding: 10px;
-        color: #47474b;
+    .how {
+        width: 90%;
+        margin: 40px 10% 0px 10%;
+    }
+    .how  h1{
+        color: var(--geeks);
+        font-size: 30px;
+        margin: 20px;
+        padding:10px;
+    }
+    .paret {
+        display: grid;
+        grid-template-columns: 100%;
     }
 
-    .moth {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-transform: uppercase;
-        padding: 5px;
-        color: #47474b;
+    .how-img img {
+        width: 100%;
+    }
+
+    .how-text p {
+
+        color: white;
+        font-size: 20px;
+        width: 90%;
+        margin: 10% 10%;
+    }
+
+    .learn {
+        height: 500px;
+        background-color: white;
+
 
     }
 
-    .more {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-transform: uppercase;
-        margin-bottom: 10%;
-        margin-top: 5%;
-        padding: 10px;
-        color: #47474b;
+    .learn h1 {
+        color: var(--geeks);
+        margin: 20px 30px;
+        padding: 15px;
+        font-size: 50px;
+
     }
 
-    .more p {
-        color: #2b2b2b;
-        transition: opacity 0.7 ease;
+    .learn-parent {
+        width: 90%;
+        margin: 5% 10%;
+        display: grid;
+        grid-template-columns: 50% 50%;
     }
 
-    .more p:hover {
-        opacity: 0.7;
-    }
 
     .ft-container {
         width: 100%;

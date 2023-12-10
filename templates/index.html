@@ -17,7 +17,7 @@
                 <div class="navigation">
                     {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
-                        <a href="postcourse.html" target="_blank"><button>записаться</button></a>
+                        <a href="{% url 'courses_post' %}" target="_blank"><button>записаться</button></a>
                     </div>
                 </div>
             </div>
@@ -30,9 +30,9 @@
                     <div class="banner-des">
                         <h1>{{settings.header_title}}</h1>
                         <p>{{settings.header_descriptions}}</p>
-                        <a href="postcourse.html" target="_blank">
+                        <a href="{% url 'courses_post' %}" target="_blank">
                         <button class="banner-btn1">ЗАПИСАТЬСЯ НА КУРС</button></a>
-                        <a href="courses.html">
+                        <a href="{% url 'courses' %}">
                         <button class="banner-btn2">ВСЕ КУРСЫ</button></a>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
             <div class="chld1">
                 <h1>{{geeks_online.title}}</h1>
                 <p>{{geeks_online.descriptions}}</p>
-                <a href="#"><button class="go-btn">ВОЙТИ</button></a>
+                <a href="https://online.geeks.kg/" target="_blank"><button class="go-btn">ВОЙТИ</button></a>
                 
             </div>
             <div class="onln-img">
@@ -109,16 +109,16 @@
             <h1>НАШИ КУРСЫ</h1>
         </div>
         <div class="cr-title">
-            <a href="courses.html">
+            <a href="{% url 'courses' %}">
             <button>ВСЕ КУРСЫ</button></a>
         </div>
     </div>
     <div class="courses">
-        {% for course in courses%}
+        {% for course in courses %}
         <div class="course">
-            <a href="course.html" class="course-link">
+            <a href="{% url 'course_detail' course.id  %}" class="course-link">
                 <img src="{{ course.image.url }}" alt="Course 1">
-                <h2>{{course.title}}</h2>
+                <h2>{{course.name}}</h2>
             </a>
         </div>
         {% endfor %}
@@ -131,7 +131,7 @@
                 <h1>ЗАПИШИСЬ НА ПРОБНЫЙ УРОК</h1>
             </div>
             <div class="pr-button">
-                <a href="courses.html"><button>ВСЕ КУРСЫ</button></a>
+                <a href="{% url 'courses' %}" target="_blank"><button>ВСЕ КУРСЫ</button></a>
             </div>
         </div>
     </div>
@@ -152,7 +152,7 @@
                 программирование, дизайн и английский язык. Филиальная сеть образовательного центра представлена в таких городах, как
                 Бишкек, Ош и Кара-Балта.
                 </p>
-                <a href="about.html"><button>ПОДРОБНЕ О НАС</button></a>
+                <a href="{% url 'about' %}"><button>ПОДРОБНЕ О НАС</button></a>
             </div>
             <div class="child-cur">
                 <img src="{% static 'images/coursesprogrammin2.webp' %}" alt="">
@@ -217,7 +217,7 @@
         <div class="rbs-container">
             {% for project in st_projects %}
             <div class="rbs-graduate">
-               <a href="#"><img src="{{project.image.url}}" alt="Student 1">
+               <a href="{{project.link}}" target="_blank"><img src="{{project.image.url}}" alt="Student 1">
                 <h3>{{project.title}}</h3>
                 <p>{{project.descriptions}}</p>
                 </a>
@@ -245,9 +245,9 @@
                 
                 <h3>Адрес</h3>
                 <ul>
-                    <a href="#"><li>{{bishkek.addres_text}}</li></a>
+                    <a href="{{bishkek.addres_map}}" target="_blank"><li>{{bishkek.addres_text}}</li></a>
                 </ul>
-                <a href="#"><button>Посмотреть в карте</button></a>
+                <a href="{{bishkek.addres_map}}" target="_blank"><button>Посмотреть в карте</button></a>
                 
             </div>
             <div class="cont-child">
@@ -265,9 +265,9 @@
                 
                 <h3>Адрес</h3>
                 <ul>
-                    <a href="#"><li>{{osh.addres_text}}</li></a>
+                    <a href="{{osh.addres_map}}" target="_blank"><li>{{osh.addres_text}}</li></a>
                 </ul>
-                <a href="#"><button>Посмотреть в карте</button></a>
+                <a href="{{osh.addres_map}}" target="_blank"><button>Посмотреть в карте</button></a>
 
             </div>
             <div class="cont-child">
@@ -285,11 +285,11 @@
                 
                 <h3>Адрес</h3>
                 <ul>
-                    <a href="#">
+                    <a href="{{kara_balta.addres_map}}" target="_blank">
                         <li>{{kara_balta.addres_text}}</li>
                     </a>
                 </ul>
-                <a href="#"><button>Посмотреть в карте</button></a>
+                <a href="{{kara_balta.addres_map}}" target="_blank"><button>Посмотреть в карте</button></a>
             </div>
         </div>
     </div>

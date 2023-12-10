@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,9 @@
         <div class="parent">
             <div class="child">
                 <h3>Зполнити форму и наша менеджера свяжутся с вами</h3>
-                <form action="/submit_course_form" method="post">
+                <form  method="post">
+                    {% csrf_token %}
+
                     <p>Имя</p>
                     <input type="text" id="name" name="name" required placeholder="Имя"><br><br>
 
@@ -23,21 +26,14 @@
                     <p>Почта:</p>
                     <input type="email" id="email" name="email" required placeholder="Почта"><br><br>
                     <p>С какого учобно заведение:</p>
-                    <input type="email" id="email" name="email" required placeholder="курс/универ"><br><br>
+                    <input type="text" id="email" name="learning" required placeholder="курс/универ"><br><br>
                     <p>направление</p>
-                    <select id="course" name="course">
-                        <option value="course1">Проектный менеджер</option>
-                        <option value="course2">Frontend</option>
-                        <option value="course3">Backend</option>
-                        <option value="course4">Fullstack</option>
-                        <option value="course5">Android</option>
-                        <option value="course6">IOS</option>
-                        <option value="course7">UX/UI</option>
-                        <option value="course8">Основы програмирование</option>
-                        <option value="course9">Детское програмирование</option>
-                        <option value="course10">тестировшик ПО</option>
+                    <select id="direction" name="direction">
+                        <{% for dt in geekspro_directions %}
+                        <option value="{{csr.name}}">{{dt.name}}</option>
+                        {% endfor %}
                     </select> <!-- Добавьте другие курсы по аналогии -->
-                    select><br><br>
+                    <br><br>
 
                     <input class="submit" type="submit" value="Записаться">
                 </form>

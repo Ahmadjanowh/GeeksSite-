@@ -210,7 +210,7 @@ class Bishkek(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.phoene
+        return self.phone 
     
     class Meta:
         verbose_name = 'Контактный данные Бишкек'

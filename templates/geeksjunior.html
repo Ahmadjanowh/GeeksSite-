@@ -16,7 +16,7 @@
                 <div class="navigation">
                     {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
-                        <a href="postdes.html" target="_blank"><button>записаться</button></a>
+                        <a href="{% url 'juniorpost' %}" target="_blank"><button>записаться</button></a>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="title">
                 <h1>{{ettings.bannet_title}}</h1>
                 <p>{{settings.banner_descriptions}}</p>
-                <a href="postdes.html"><button>записаться на курс</button></a>
+                <a href="{% url 'juniorpost' %}"><button>записаться на курс</button></a>
             </div>
             <div class="image">
                 <img src="{{settings.banner_image.url}}" alt="geeks junior">
@@ -89,8 +89,8 @@
                         <p>Длительность: {{cours.moth}}</p>
                     </div>
                     <div class="more">
-                        <a href="#">
-                            <p>подробне -></p>
+                        <a href="{% url 'juniorpost' %}">
+                            <p>Записаться</p>
                         </a>
                     </div>
 
@@ -108,7 +108,7 @@
                 <div class="pru">
                     <h1>{{free_lesson.title}}</h1>
                     <p>{{free_lesson.description}}</p>
-                    <a href="#">
+                    <a href="{% url 'juniorpost' %}">
                         <button>записаться на пробный урок</button>
                     </a>
                 </div>

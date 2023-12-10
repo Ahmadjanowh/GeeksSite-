@@ -17,7 +17,7 @@
                 <div class="navigation">
                     {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
-                        <a href="postgeekspro.html" target="_blank"><button>записаться</button></a>
+                        <a href="{% url 'courses_post' %}" target="_blank"><button>записаться</button></a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="title">
                     <h1>{{settings.banner_title}}</h1>
                     <p>{{settings.banner_descriptions}}</p>
-                    <a href="postgeekspro.html" target="_blank"><button>заявка в geeks pro </button></a>
+                    <a href="{% url 'geekspro_post' %}" target="_blank"><button>заявка в geeks pro </button></a>
                 </div>
                 <div class="image">
                     <img src="{{settings.banner_image.url}}" alt="geeks junior" style="max-width: 75%;">

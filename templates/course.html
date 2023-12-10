@@ -15,18 +15,10 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navigation">
-                    <div class="logo">
-                        <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="Geeks logo"></a>
-                    </div>
-                    <div class="navbar-nav">
-                        <a href="courses.html" class="navbar-a">курсы</a>
-                        <a href="geeksjunior.html" class="navbar-a">geeks junior</a>
-                        <a href="geekspro.html" class="navbar-a">geeks pro</a>
-                        <a href="geekspro.html" class="navbar-a">о нас</a>
-                        <a href="https://www.geekstudio.kg/" class="navbar-a" target="_blank">GEEKSTUDIO</a>
-                    </div>
+                    {% include 'include/navigations.html' %}
                     <div class="navbar-btn">
-                        <button>записаться</button>
+                        <a href="{% url 'courses' %}">
+                        <button>записаться</button></a>
                     </div>
                 </div>
             </div>
@@ -34,85 +26,84 @@
         <!-- end of navbar  -->
         <!-- banner start -->
         <div class="banner">
-            <div class="banner-container">
-                <div class="banner-content">
-                    <div class="banner-des">
-                        <h1>ЗНАНИЯ С ГАРАНТИЕЙ</h1>
-                        <p>ИЗУЧАЙТЕ IT И СТАНЬТЕ ЭКСПЕРТОМ В СВОЕЙ ОБЛАСТИ</p>
-                        <a href="#"><button class="banner-btn1">ЗАПИСАТЬСЯ НА КУРС</button></a>
-                        <a href="#"><button class="banner-btn2">ВСЕ КУРСЫ</button></a>
-                    </div>
-                </div>
-                <div class="banner-img">
-                    <img src="{% static 'images/bannerphoto.webp' %}" alt="geeks">
-                </div>
-            </div>
+            <h1>{{course.name}}</h1>
+            <h2>В БИШКЕКЕ</h2>
+            <h3>НАЧАЛО КУРСА: {{course.start}}</h3>
+            <h3>ГРАФИК: {{course.time}}</h3>
+            <h3>{{course.graphics}}</h3>
+            <p>{{course.banner_description}}</p>
+            <a href="{% url 'courses_post' %}"><button>записаться на урок -></button></a>
         </div>
         <!-- banner  end -->
     </header>
 
+
+    <div class="info-container">
+        <div class="info-parent">
+            <div class="info-sts">
+                <div class="sts-parent">
+                    <div class="moth-t">
+                        <h1>{{course.moth}}</h1>
+                        <p>месяцов</p>
+                    </div>
+                    <div class="price">
+                        <h1>{{course.price}}</h1>
+                        <p>Сомов в месяц</p>
+                    </div>
+                    <div class="lessons">
+                        <h1>{{course.lessons}}</h1>
+                        <p>Занятий</p>
+                    </div>
+                    <div class="techers">
+                        <h1>{{course.techers}}</h1>
+                        <p>Преподавателей</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sts-img">
+                <img src="{% static 'images/courses/course.webp' %}" alt="">
+            </div>  
+        </div>
+    </div>
+
+    <div class="how">
+        <h1>Кто такой {{course.name}}</h1>
+        <div class="paret">
+            <div class="how-text">
+                <p>{{course.about_course1}}</p>
+            </div>
+            <div class="how-img">
+                <img src="{% static 'images/courses/howri.webp' %}" alt="">
+            </div>
+            <div class="how-img">
+                <img src="{% static 'images/courses/howl.webp' %}" alt="">
+            </div>
+            <div class="how-text">
+                <p>{{course.about_course2}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="learn">
+        <h1>ВЫ ОСВОИТЕ</h1>
+        <div class="learn-parent">
+            {% for learning in course.learning_set.all %}
+            <div class="leart-con">
+                <img src="{{learning.learning_img.url}}" alt="">
+                <h2>{{learning.learning_title}}</h2>    
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     <!-- Foother -->
     <footer>
         <div class="ft-container">
             <img src="{% static 'images/logo.svg' %}" alt="Geeklogo">
             <div class="ft-parent">
-                <div class="ft-child">
-                    <h3>Курсы</h3>
-                    <ul>
-                        <li>Проектный менеджер</li>
-                        <li>Fullstack-разработчиком</li>
-                        <li>ux/ui-дизйнер</li>
-                        <li>ANDROID-разработчик</li>
-                        <li>основы програирование</li>
-                        <li>FRONTEND-РАЗРАБОТЧИК</li>
-                        <li>BACKEND-РАЗРАБОТЧИК</li>
-                        <li>Тестировшик</li>
     
-                    </ul>
-                </div>
-                <div class="ft-child">
-                    <h3>Курсы</h3>
-                    <ul>
-                        <li>Проектный менеджер</li>
-                        <li>Fullstack-разработчиком</li>
-                        <li>ux/ui-дизйнер</li>
-                        <li>ANDROID-разработчик</li>
-                        <li>основы програирование</li>
-                        <li>FRONTEND-РАЗРАБОТЧИК</li>
-                        <li>BACKEND-РАЗРАБОТЧИК</li>
-                        <li>Тестировшик</li>
     
-                    </ul>
-                </div>
-                <div class="ft-child">
-                    <h3>Курсы</h3>
-                    <ul>
-                        <li>Проектный менеджер</li>
-                        <li>Fullstack-разработчиком</li>
-                        <li>ux/ui-дизйнер</li>
-                        <li>ANDROID-разработчик</li>
-                        <li>основы програирование</li>
-                        <li>FRONTEND-РАЗРАБОТЧИК</li>
-                        <li>BACKEND-РАЗРАБОТЧИК</li>
-                        <li>Тестировшик</li>
-    
-                    </ul>
-                </div>
-                <div class="ft-child">
-                    <h3>Курсы</h3>
-                    <ul>
-                        <li>Проектный менеджер</li>
-                        <li>Fullstack-разработчиком</li>
-                        <li>ux/ui-дизйнер</li>
-                        <li>ANDROID-разработчик</li>
-                        <li>основы програирование</li>
-                        <li>FRONTEND-РАЗРАБОТЧИК</li>
-                        <li>BACKEND-РАЗРАБОТЧИК</li>
-                        <li>Тестировшик</li>
-    
-                    </ul>
-                </div>
             </div>
+        </div>
         </div>
         <div class="scl-contatiner">
             <div class="scl-parent">

@@ -1,120 +1,76 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Курсы</title>
-    <link rel="stylesheet" href="{% static 'css/course.css' %}">
-</head>
-<body>
-    <!-- header section start -->
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="navigation">
-                    {% include 'include/navigations.html' %}
-                    <div class="navbar-btn">
-                        <a href="postcourse.html" target="_blank"><button>записаться</button></a>
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Курсы</title>
+        <link rel="stylesheet" href="{% static 'css/course.css' %}">
+    </head>
+    <body>
+        <!-- header section start -->
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navigation">
+                        {% include 'include/navigations.html' %}
+                        <div class="navbar-btn">
+                            <a href="{% url 'courses_post' %}" target="_blank"><button>записаться</button></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- end of navbar  -->
+            <!-- banner start -->
+
+            <div class="banner">
+                <div class="banner-container">
+                    <div class="bn-child1">
+
+                    </div>
+                    <div class="bn-child">
+                        <h1>САМЫЕ ВОСТРЕБОВАННЫЕ IT-КУРСЫ</h1>
+                        <h2>В КЫРГЫЗСТАНЕ</h2>
+                        <p>МЫ ПОСТОЯННО ИССЛЕДУЕМ РЫНОК ТРУДА В ПОИСКЕ САМЫХ ПОПУЛЯРНЫХ И ПЕРСПЕКТИВНЫХ IT-НАПРАВЛЕНИ</p>
                     </div>
                 </div>
             </div>
-        </nav>
-        <!-- end of navbar  -->
-        <!-- banner start -->
-
-        <div class="banner">
-            <div class="banner-container">
-                <div class="bn-child1">
-
+        </header>
+            <!-- banner  end -->
+        <!-- header section end -->
+        <div class="crs-container">
+            <div class="crs-parent">
+                {% for crs in courses %}
+                <div class="crs">
+                    <div class="crs-items">
+                        <div class="icon">
+                            <img src="{{crs.image.url}}" alt="">
+                        </div>
+                        <div class="start">
+                            <p>Старт: {{crs.start}}</p>
+                        </div>
+                        <div class="title">
+                            <h1>{{crs.title}}</h1>
+                        </div>
+                        <div class="des">
+                            <p>{{crs.description}}</p>
+                        </div>
+                        <div class="moth">
+                            <p>Длительность: {{crs.moth}} месяца</p>
+                        </div>
+                        <div class="more">
+                            <a href="{% url 'course_detail' crs.id  %}">    
+                                <p>подробне -></p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="bn-child">
-                    <h1>САМЫЕ ВОСТРЕБОВАННЫЕ IT-КУРСЫ</h1>
-                    <h2>В КЫРГЫЗСТАНЕ</h2>
-                    <p>МЫ ПОСТОЯННО ИССЛЕДУЕМ РЫНОК ТРУДА В ПОИСКЕ САМЫХ ПОПУЛЯРНЫХ И ПЕРСПЕКТИВНЫХ IT-НАПРАВЛЕНИ</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
-    </header>
-        <!-- banner  end -->
-    <!-- header section end -->
-    <div class="crs-container">
-        <div class="crs-parent">
-            <div class="crs">
-                <div class="crs-items">
-                    <div class="icon">
-                        <img src="{% static 'images/courses/prmendjer.svg' %}" alt="">
-                    </div>
-                    <div class="start">
-                        <p>Старт: 19.12.2023</p>
-                    </div>
-                    <div class="title">
-                        <h1>МЕНЕДЖЕР ПРОЕКТОВ</h1>
-                    </div>
-                    <div class="des">
-                        <p>Стань Менеджером проектов с нуля за 2 месяца! Получи доступ к стажировке и помощь в трудоустройстве!</p>
-                    </div>
-                    <div class="moth">
-                        <p>Длительность: 2 месяца</p>
-                    </div>
-                    <div class="more">
-                        <a href="#">
-                            <p>подробне -></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="crs">
-                <div class="crs-items">
-                    <div class="icon">
-                        <img src="{% static 'images/courses/prmendjer.svg' %}" alt="">
-                    </div>
-                    <div class="start">
-                        <p>Старт: 19.12.2023</p>
-                    </div>
-                    <div class="title">
-                        <h1>МЕНЕДЖЕР ПРОЕКТОВ</h1>
-                    </div>
-                    <div class="des">
-                        <p>Стань Менеджером проектов с нуля за 2 месяца! Получи доступ к стажировке и помощь в трудоустройстве!</p>
-                    </div>
-                    <div class="moth">
-                        <p>Длительность: 2 месяца</p>
-                    </div>
-                    <div class="more">
-                        <a href="#"><p>подробне -></p></a>
-                    </div>
-                </div>
-            </div>
-            <div class="crs">
-                <div class="crs-items">
-                    <div class="icon">
-                        <img src="{% static 'images/courses/prmendjer.svg' %}" alt="">
-                    </div>
-                    <div class="start">
-                        <p>Старт: 19.12.2023</p>
-                    </div>
-                    <div class="title">
-                        <h1>МЕНЕДЖЕР ПРОЕКТОВ</h1>
-                    </div>
-                    <div class="des">
-                        <p>Стань Менеджером проектов с нуля за 2 месяца! Получи доступ к стажировке и помощь в трудоустройстве!</p>
-                    </div>
-                    <div class="moth">
-                        <p>Длительность: 2 месяца</p>
-                    </div>
-                    <div class="more">
-                        <a href="#">
-                            <p>подробне -></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-<!-- 
-    Foother -->
-    {% include 'include/foother.html'%}
-</body>
-</html>
+        
+    <!-- 
+        Foother -->
+        {% include 'include/foother.html'%}
+    </body>
+    </html>
